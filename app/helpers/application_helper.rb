@@ -1,5 +1,7 @@
 module ApplicationHelper
   require 'open-uri'
+  
+  
   def twitter_get
     url = "http://api.twitter.com/1/statuses/user_timeline.json?screen_name=conduitrobotic"
     #open(url, 'r') do |http|
@@ -18,6 +20,7 @@ module ApplicationHelper
     end
     return array
   end
+  
 
   def twitter_last3    
     begin 
@@ -51,22 +54,30 @@ module ApplicationHelper
     #result = => ["coordinates", "truncated", "favorited", "created_at", "id_str", "in_reply_to_user_id_str", "text", "contributors", "in_reply_to_status_id_str", "id", "retweet_count", "geo", "retweeted", "in_reply_to_user_id", "source", "user", "in_reply_to_screen_name", "place", "in_reply_to_status_id"]
     return array
   end
+  
+  
   def twitter_get_last
     tweets = twitter_last3
     if tweets == false
-      return "twitter api error"
+      return {'text'=>"twitter api error", 'when'=>Time.now, 'id'=>false}
     end
     tweet = tweets[0]
+    if tweet.nil?
+      return {'text'=>"twitter api error", 'when'=>Time.now.to_s, 'id'=>false}
+    end
     return {'text'=>tweet['text'], 'when'=>tweet['created_at'], 'id'=>tweet['id']}
     #return "twitter placeholder"
   end
+  
+  
   def rel_date(date)
+    date = date.to_s
     date = Date.parse(date, true) unless /Date.*/ =~ date.class.to_s
     days = (date - Date.today).to_i
 
-    return 'today'     if days >= 0 and days < 1
-    return 'tomorrow'  if days >= 1 and days < 2
-    return 'yesterday' if days >= -1 and days < 0
+    return 'Today'     if days >= 0 and days < 1
+    return 'Tomorrow'  if days >= 1 and days < 2
+    return 'Yesterday' if days >= -1 and days < 0
 
     return "in #{days} days"      if days.abs < 60 and days > 0
     return "#{days.abs} days ago" if days.abs < 60 and days < 0

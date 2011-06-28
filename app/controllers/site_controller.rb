@@ -1,6 +1,7 @@
 class SiteController < ApplicationController
   def index
-    @title = "Home"
+    @post = Post.last
+    @title = "I am the Bit Crusher"
   end
   
   def about

@@ -8,6 +8,12 @@
 </head>
 <body>
 	<!--<div id="bookme"><%=image_tag("bookme1.gif")%></div>-->
+	<%if flash[:error]%>
+		<div id="error"><div id="flash"><%=flash[:error]%></div></div>
+	<%end%>
+	<%if flash[:notice]%>
+		<div id="notice"><div id="flash"><%=flash[:notice]%></div></div>
+	<%end%>
 	<div id="container">
 		<div id="header">
 			
@@ -18,7 +24,9 @@
 				<%=raw(auto_link(twitter_get_last['text']))%>
 			</div>
 			<div class="twit-time">
-				<%=link_to("Posted: #{rel_date(twitter_get_last['when'])}","http://twitter.com/conduitrobotic/status/#{twitter_get_last['id']}")%>
+				<%unless twitter_get_last['id'] == false%>
+					<%=link_to("Posted: #{rel_date(twitter_get_last['when'])}","http://twitter.com/conduitrobotic/status/#{twitter_get_last['id']}")%>
+				<%end%>
 			</div>
 		</div>
 		<div class="clear"></div>

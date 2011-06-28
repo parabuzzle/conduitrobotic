@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conduit Robotic :: <%=@title%></title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	<!--<div id="bookme"><%=image_tag("bookme1.gif")%></div>-->
+	<div id="container">
+		<div id="header">
+			
+		</div><!--header-->
+		<div id="twitter">
+			<div id="twitter-head"><%=link_to(image_tag('color_stroked_icons/twitter.png', :width=>"50px"), "http://twitter.com/conduitrobotic")%></div>
+			<div class="twit-text">
+				<%=raw(auto_link(twitter_get_last['text']))%>
+			</div>
+			<div class="twit-time">
+				<%unless twitter_get_last['id'] == false%>
+					<%=link_to("Posted: #{rel_date(twitter_get_last['when'])}","http://twitter.com/conduitrobotic/status/#{twitter_get_last['id']}")%>
+				<%end%>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="nav">
+			<ul>
+				<li><%=link_to("main site.", :controller=>:site, :action=>:index)%></li>
+				<li>|</li>
+				<li><%=link_to("new post.", :controller=>:posts, :action=>:new)%></li>
+				<li>|</li>
+				<li><%=link_to("edit pages.", :controller=>:pages, :action=>:index)%></li>
+				<li>|</li>
+				<li><%=link_to("edit posts.", :controller=>:posts, :action=>:index)%></li>
+			</ul>
+		</div><!--nav-->
+		<div class="clear"></div>
+		<div id="main">
+				<div class="pad10">
+				<%= yield %>
+				</div>
+			
+			<div class="clear"></div>
+		</div><!--main-->
+
+		<div id="footer">
+			<div id="copyright">copyright &copy; <%=Time.now.year%> conduitrobotic.com</div>
+			<div class="clear"></div>
+		</div><!--footer-->
+	</div> <!--container-->
+
+</body>
+</html>

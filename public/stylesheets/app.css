@@ -32,6 +32,19 @@ a {
 a:hover {
 	color:#fff;
 }
+#notice {
+	position:absolute;
+	width:100%;
+	background:#303;
+}
+#error {
+	position:absolute;
+	width:100%;
+	background:#500;
+}
+#flash {
+	padding:20px;
+}
 #bookme {
 	position:absolute;
 }
