@@ -1,0 +1,35 @@
+<div class="lightenup">
+	<h2>Contact</h2>
+	<%=form_for :contact do |f|%>
+		<table>
+			<tr>
+				<td align="right">Your Name:</td>
+				<td><%=f.text_field('name')%></td>
+			</tr>
+			<tr>
+				<td align="right">Your Email:</td>
+				<td><%=f.text_field('email')%></td>
+			</tr>
+			<tr>
+				<td align="right">Type of Inquiry:</td>
+				<td><%=f.select('type', ['booking','remix request','management','general','website issue'])%></td>
+			</tr>
+			<tr>
+				<td style="vertical-align:top; text-align:right;">Message:</td>
+				<td><%=f.text_area('message')%></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right"><%=f.submit('Send Message')%></td>
+			<tr>
+		</table>
+	<%end%>
+
+	</div>
+	<div class="lightenup">
+	<h2>Useful Email Addresses</h2>
+	Booking - bookme @ conduitrobotic.com<br/>
+	Requests - request @ conduitrobotic.com<br/>
+	Management - management @ conduitrobotic.com<br/>
+	general - mail @ conduitrobotic.com<br/>
+	website - website @ conduitrobotic.com
+</div>

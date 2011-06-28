@@ -18,17 +18,24 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 body {
-	background:#000;
+	background:#111;
+	/*background-image:url('/images/stripe2.png');*/
 	color:#fff;
 	font-family:helvetica;
 	/*background-image: url('/images/background1.png');
 	background-repeat: no-repeat;*/
 }
+a {
+	color:#666;
+	text-decoration:none;
+}
+a:hover {
+	color:#fff;
+}
 #bookme {
 	position:absolute;
 }
 #container {
-	
 	margin:auto;
 	width:960px;
 	background:#000;
@@ -36,12 +43,37 @@ body {
 }
 
 #header {
+	height:270px;
+	background-image: url('/images/topbanner1.jpg');
+	background-repeat:no-repeat;
 	/*border-bottom:1px solid #333;*/
 }
-
+h2 {
+	padding:6px;
+	margin-bottom: 6px;
+	background-image: url('/images/stripe1.png');
+	border: 1px solid #000;
+}
+h1 {
+	padding:6px;
+	font-size:24px;
+	margin-bottom: 6px;
+	background-image: url('/images/stripe3.png');
+	border: 1px solid #000;
+}
+#twitter {
+	padding:10px;
+	background-image:url('/images/stripe3.png');
+	width:300px;
+	float:right;
+}
+#twitter-head{
+	float:right;
+}
 #nav{
 	padding:4px;
 	background:#333;
+	/*background-image: url('/images/stripe3.png');*/
 	/*put in a real background image here...*/
 }
 
@@ -79,16 +111,50 @@ body {
 #right_col {
 	float:right;
 	width: 220px;
-	background:#333;
+	text-align:center;
 	padding:10px;
+}
+#right_nav {
+	padding:10px;
+	margin-bottom: 20px;
+	text-align:left;
+	background:#333;
+	background-image: url('/images/stripe2.png');
+}
+#right_nav ul {
+	margin-left:0;
+	font-weight:bold;
+	list-style-type: none;
+	padding:0;
+	
+}
+
+#right_nav li {
+	border-bottom:1px solid #aaa;
+	margin-bottom: 2px;
+	padding:1px;
+}
+#right_nav li a {
+	color:#fff;
+	text-decoration:none;
+}
+
+#right_nav li a:hover {
+	color:#000;
 }
 #left_col {
 	width:680px;
-	background:#111;
+	/*background-image: url('/images/stripe3.png');*/
 	padding:5px;
+}
+.lightenup {
+	margin-bottom: 20px;
+	padding:10px;
+	background:#111;
 }
 
 #footer {
+	background:#111;
 	font-size:12px;
 	border-top:#333 solid 2px;
 	padding:10px;
@@ -100,7 +166,23 @@ body {
 .pad10 {
 	padding:10px;
 }
-
+.center {
+	text-align:center;
+}
 .clear {
 	clear:both;
+}
+.twit-time {
+	padding:3px;
+	font-size:11px;
+	color:#999;
+}
+.fright {
+	float:right;
+	padding:5px;
+}
+.time {
+	margin:7px;
+	color:#aaa;
+	font-size:11px;
 }

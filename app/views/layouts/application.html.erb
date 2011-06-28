@@ -10,37 +10,72 @@
 	<!--<div id="bookme"><%=image_tag("bookme1.gif")%></div>-->
 	<div id="container">
 		<div id="header">
-			<%=image_tag("topbanner1.jpg")%>
+			
 		</div><!--header-->
+		<div id="twitter">
+			<div id="twitter-head"><%=link_to(image_tag('color_stroked_icons/twitter.png', :width=>"50px"), "http://twitter.com/conduitrobotic")%></div>
+			<div class="twit-text">
+				<%=raw(auto_link(twitter_get_last['text']))%>
+			</div>
+			<div class="twit-time">
+				<%=link_to("Posted: #{rel_date(twitter_get_last['when'])}","http://twitter.com/conduitrobotic/status/#{twitter_get_last['id']}")%>
+			</div>
+		</div>
+		<div class="clear"></div>
 		<div id="nav">
 			<ul>
 				<li><%=link_to("home.", :controller=>:site, :action=>:index)%></li>
 				<li>|</li>
-				<li><%=link_to("about.", :controller=>:site, :action=>:index)%></li>
+				<li><%=link_to("about.", :controller=>:site, :action=>:about)%></li>
 				<li>|</li>
-				<li><%=link_to("media.", :controller=>:site, :action=>:index)%></li>
+				<li><%=link_to("media.", :controller=>:site, :action=>:media)%></li>
 				<li>|</li>
-				<li><%=link_to("press.", :controller=>:site, :action=>:index)%></li>
+				<li><%=link_to("press.", :controller=>:site, :action=>:press)%></li>
 				<li>|</li>
-				<li><%=link_to("blog.", :controller=>:site, :action=>:index)%></li>
+				<li><%=link_to("podcast.", :controller=>:site, :action=>:podcast)%></li>
 				<li>|</li>
-				<li><%=link_to("shows.", :controller=>:site, :action=>:index)%></li>
+				<li><%=link_to("shows.", :controller=>:site, :action=>:shows)%></li>
 				<li>|</li>
-				<li><%=link_to("contact.", :controller=>:site, :action=>:index)%></li>
+				<li><%=link_to("contact.", :controller=>:site, :action=>:contact)%></li>
 				<li>|</li>
-				<li><%=link_to("epk.", :controller=>:site, :action=>:index)%></li>
+				<li><%=link_to("epk.", :controller=>:site, :action=>:epk)%></li>
 			</ul>
 		</div><!--nav-->
 		<div class="clear"></div>
 		<div id="main">
 			<div id="right_col">
-				Right Nav
+				<object height="18" width="100%"> <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F15516199&amp;auto_play=false&amp;player_type=tiny&amp;font=Courier&amp;color=c30000"></param> <param name="allowscriptaccess" value="always"></param> <param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="18" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F15516199&amp;auto_play=false&amp;player_type=tiny&amp;font=Courier&amp;color=c30000" type="application/x-shockwave-flash" width="100%"></embed> </object> <br/>
+				<object height="18" width="100%"> <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F14403747&amp;auto_play=false&amp;player_type=tiny&amp;font=Courier&amp;color=c30000"></param> <param name="allowscriptaccess" value="always"></param> <param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="18" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F14403747&amp;auto_play=false&amp;player_type=tiny&amp;font=Courier&amp;color=c30000" type="application/x-shockwave-flash" width="100%"></embed> </object>   
+				<div id="right_nav">
+					Search<br/><%=form_for :search do |f|%> <%=f.text_field('query')%> <%end%>
+					<br/>
+					Links
+					<ul>
+						<li><%=link_to("mailing list.", :controller=>:site, :action=>:index)%></li>
+						<li><%=link_to("live stream.", "http://www.justin.tv/conduitrobotic")%></li>
+						<li><%=link_to("downloads.", :controller=>:site, :action=>:index)%></li>
+						<li><%=link_to("extras.", :controller=>:site, :action=>:index)%></li>
+					</ul>
+					<div class="center">
+					<%=link_to(image_tag('color_stroked_icons/rss.png'), "http://feeds.feedburner.com/ConduitRobotic")%><br/>
+					subscribe to my podcast
+					</div>
+				</div>
+				<%=link_to(image_tag('color_stroked_icons/facebook.png', :width=>"50px"), "http://facebook.com/conduitrobotic")%> 
+				<%=link_to(image_tag('color_stroked_icons/twitter.png', :width=>"50px"), "http://twitter.com/conduitrobotic")%> 
+				<%=link_to(image_tag('color_stroked_icons/yout.png', :width=>"50px"), "http://youtube.com/conduitrobotic")%>
+				<br/>
+				<br/>
+				Become a Fan on Facebook
+				<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fconduitrobotic&amp;width=190&amp;colorscheme=dark&amp;show_faces=true&amp;border_color=black&amp;stream=false&amp;header=false&amp;height=300" scrolling="no" frameborder="0" style="border:1px solid #aaa; overflow:hidden; width:190px; height:300px;" allowTransparency="true"></iframe>
+				
 			</div><!--right_col-->
 			<div id="left_col">
 				<div class="pad10">
 				<%= yield %>
 				</div>
 			</div><!--left_col-->
+			
 			<div class="clear"></div>
 		</div><!--main-->
 
