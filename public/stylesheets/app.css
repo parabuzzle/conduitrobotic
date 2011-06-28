@@ -1,0 +1,106 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+	list-style-type:none; 
+}
+
+body {
+	background:#000;
+	color:#fff;
+	font-family:helvetica;
+	/*background-image: url('/images/background1.png');
+	background-repeat: no-repeat;*/
+}
+#bookme {
+	position:absolute;
+}
+#container {
+	
+	margin:auto;
+	width:960px;
+	background:#000;
+	/*border:#333 1px solid;*/
+}
+
+#header {
+	/*border-bottom:1px solid #333;*/
+}
+
+#nav{
+	padding:4px;
+	background:#333;
+	/*put in a real background image here...*/
+}
+
+#nav ul {
+	margin-left:0;
+	font-weight:bold;
+	list-style-type: none;
+	padding:0;
+	
+}
+
+#nav li {
+	margin-top:-15px;
+	padding-right:15px;
+	float:left;
+}
+
+#nav li a {
+	color:#fff;
+	text-decoration:none;
+}
+
+#nav li a:hover {
+	color:#000;
+}
+
+#main {
+	border-left:#333 solid 1px;
+	border-right:#333 solid 1px;
+	padding: 10px;
+	min-height:400px;
+	_height:400px;
+}
+
+#right_col {
+	float:right;
+	width: 220px;
+	background:#333;
+	padding:10px;
+}
+#left_col {
+	width:680px;
+	background:#111;
+	padding:5px;
+}
+
+#footer {
+	font-size:12px;
+	border-top:#333 solid 2px;
+	padding:10px;
+}
+
+#copyright {
+	float:right;
+}
+.pad10 {
+	padding:10px;
+}
+
+.clear {
+	clear:both;
+}

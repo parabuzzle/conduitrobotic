@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conduit Robotic :: <%=@title%></title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	<!--<div id="bookme"><%=image_tag("bookme1.gif")%></div>-->
+	<div id="container">
+		<div id="header">
+			<%=image_tag("topbanner1.jpg")%>
+		</div><!--header-->
+		<div id="nav">
+			<ul>
+				<li><%=link_to("home.", :controller=>:site, :action=>:index)%></li>
+				<li>|</li>
+				<li><%=link_to("about.", :controller=>:site, :action=>:index)%></li>
+				<li>|</li>
+				<li><%=link_to("media.", :controller=>:site, :action=>:index)%></li>
+				<li>|</li>
+				<li><%=link_to("press.", :controller=>:site, :action=>:index)%></li>
+				<li>|</li>
+				<li><%=link_to("blog.", :controller=>:site, :action=>:index)%></li>
+				<li>|</li>
+				<li><%=link_to("shows.", :controller=>:site, :action=>:index)%></li>
+				<li>|</li>
+				<li><%=link_to("contact.", :controller=>:site, :action=>:index)%></li>
+				<li>|</li>
+				<li><%=link_to("epk.", :controller=>:site, :action=>:index)%></li>
+			</ul>
+		</div><!--nav-->
+		<div class="clear"></div>
+		<div id="main">
+			<div id="right_col">
+				Right Nav
+			</div><!--right_col-->
+			<div id="left_col">
+				<div class="pad10">
+				<%= yield %>
+				</div>
+			</div><!--left_col-->
+			<div class="clear"></div>
+		</div><!--main-->
+
+		<div id="footer">
+			<div id="copyright">copyright &copy; <%=Time.now.year%> conduitrobotic.com</div>
+			<div class="clear"></div>
+		</div><!--footer-->
+	</div> <!--container-->
+
+</body>
+</html>
