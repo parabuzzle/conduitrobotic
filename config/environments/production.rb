@@ -33,7 +33,10 @@ Conduitrobotic::Application.configure do
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
-
+  
+  #for AWS S3 asset hosting
+  #config.action_controller.asset_host = "http://s3.amazonaws.com/assets.conduitrobotic.com"
+  
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 

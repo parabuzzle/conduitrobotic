@@ -1,0 +1,19 @@
+<h1>New Post</h1>
+
+<div class="lightenup">
+<table>
+	<%=form_for :post do |f|%>
+		<tr>
+			<td>Title:</td>
+			<td><%=f.text_field(:title)%></td>
+		</tr>
+		<tr>
+			<td>Text:</td>
+			<td><%=f.text_area(:data)%></td>
+		</tr>
+		<tr>
+			<td colspan="2"><%=f.submit("post")%></td>
+		</tr>
+	<%end%>
+</table>
+</div>

@@ -1,0 +1,12 @@
+<h1>News Archive</h1>
+
+	<%@posts.each do |post|%>
+	<div class="lightenup">
+		<h2><%=post.title%></h2>
+		<div class="time">Posted: <%=rel_date(post.created_at.to_s)%></div>
+		<%=post.data%>
+		</div>
+	<%end%>
+
+
+<%= will_paginate @posts %>

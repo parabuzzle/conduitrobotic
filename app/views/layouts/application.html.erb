@@ -38,12 +38,12 @@
 				<li>|</li>
 				<li><%=link_to("media.", :controller=>:site, :action=>:media)%></li>
 				<li>|</li>
-				<li><%=link_to("press.", :controller=>:site, :action=>:press)%></li>
+				<!--<li><%=link_to("press.", :controller=>:site, :action=>:press)%></li>
 				<li>|</li>
 				<li><%=link_to("podcast.", :controller=>:site, :action=>:podcast)%></li>
 				<li>|</li>
 				<li><%=link_to("shows.", :controller=>:site, :action=>:shows)%></li>
-				<li>|</li>
+				<li>|</li> -->
 				<li><%=link_to("contact.", :controller=>:site, :action=>:contact)%></li>
 				<li>|</li>
 				<li><%=link_to("epk.", :controller=>:site, :action=>:epk)%></li>
@@ -55,14 +55,14 @@
 				<object height="18" width="100%"> <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F15516199&amp;auto_play=false&amp;player_type=tiny&amp;font=Courier&amp;color=c30000"></param> <param name="allowscriptaccess" value="always"></param> <param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="18" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F15516199&amp;auto_play=false&amp;player_type=tiny&amp;font=Courier&amp;color=c30000" type="application/x-shockwave-flash" width="100%"></embed> </object> <br/>
 				<object height="18" width="100%"> <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F14403747&amp;auto_play=false&amp;player_type=tiny&amp;font=Courier&amp;color=c30000"></param> <param name="allowscriptaccess" value="always"></param> <param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="18" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F14403747&amp;auto_play=false&amp;player_type=tiny&amp;font=Courier&amp;color=c30000" type="application/x-shockwave-flash" width="100%"></embed> </object>   
 				<div id="right_nav">
-					Search<br/><%=form_for :search do |f|%> <%=f.text_field('query')%> <%end%>
+					Search<br/><%=form_for :search do |f|%> <%=f.text_field('query', :size=>"34")%><%end%>
 					<br/>
 					Links
 					<ul>
-						<li><%=link_to("mailing list.", :controller=>:site, :action=>:index)%></li>
+						<!-- <li><%=link_to("mailing list.", :controller=>:site, :action=>:index)%></li> -->
 						<li><%=link_to("live stream.", "http://www.justin.tv/conduitrobotic")%></li>
-						<li><%=link_to("downloads.", :controller=>:site, :action=>:index)%></li>
-						<li><%=link_to("extras.", :controller=>:site, :action=>:index)%></li>
+						<!-- <li><%=link_to("downloads.", :controller=>:site, :action=>:index)%></li> -->
+						<!--<li><%=link_to("extras.", :controller=>:site, :action=>:index)%></li>-->
 					</ul>
 					<div class="center">
 					<%=link_to(image_tag('color_stroked_icons/rss.png'), "http://feeds.feedburner.com/ConduitRobotic")%><br/>

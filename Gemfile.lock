@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/mislav/will_paginate.git
+  revision: b1a5beeec9f56ecbe3594fcdca76d92b6767ce50
+  branch: rails3
+  specs:
+    will_paginate (3.0.pre3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -28,11 +35,21 @@ GEM
       activemodel (= 3.0.8)
       activesupport (= 3.0.8)
     activesupport (3.0.8)
+    addressable (2.2.6)
     arel (2.0.10)
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    faraday (0.7.3)
+      addressable (~> 2.2.6)
+      multipart-post (~> 1.1.0)
+      rack (< 2, >= 1.1.0)
+    faraday-stack (0.1.2)
+      faraday (~> 0.6)
     i18n (0.5.0)
+    indextank (1.0.12)
+      faraday-stack
+      yajl-ruby (>= 0.7.7)
     json (1.5.3)
     mail (2.2.19)
       activesupport (>= 2.3.6)
@@ -40,6 +57,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    multipart-post (1.1.2)
     pg (0.11.0)
     polyglot (0.3.1)
     rack (1.2.3)
@@ -65,11 +83,14 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.27)
+    yajl-ruby (0.8.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  indextank
   json
   pg
   rails (= 3.0.8)
+  will_paginate!

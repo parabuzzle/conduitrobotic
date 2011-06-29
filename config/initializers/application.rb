@@ -1,7 +1,7 @@
 #application specific loader
 
 module Cryptos
-  @salt = "change-this-shit"
+  @salt = ENV['CR_salt']
   
   def encrypt(password, salt=@salt)
     Digest::SHA512.hexdigest("#{password}:#{salt}")

@@ -8,6 +8,8 @@ gem 'rails', '3.0.8'
 #gem 'sqlite3'
 gem 'pg'
 gem 'json'
+gem 'indextank'
+gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
